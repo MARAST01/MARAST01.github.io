@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #1f2232;
+  overflow-x: hidden;
 }
 
 body > header {
@@ -21,6 +35,35 @@ body > header nav {
     margin: 0 auto;
     padding: 0 24px;
     box-sizing: border-box;
+    position: relative;
+}
+
+.menu-toggle-input {
+    display: none;
+}
+
+.menu-toggle-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.menu-toggle-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #e8e8e8;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-toggle-btn:hover span {
+    background-color: #e3b505;
 }
 
 body > header nav ul {
@@ -134,7 +177,8 @@ body > header nav ul li.hireme a::after {
 .universidad {
   font-family: 'JetBrains Mono', monospace;
   color: #95190c;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   text-align-last: justify;
 }
 
@@ -142,7 +186,8 @@ body > header nav ul li.hireme a::after {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin: 0;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   text-align-last: justify;
   background: linear-gradient(to right, #e3b505 20%, #e8e8e8);
   background-clip: text;
@@ -238,7 +283,7 @@ body > header nav ul li.hireme a::after {
   box-sizing: border-box;
 }
 
-#experiencia {
+.experiencia {
   color: #e8e8e8;
   font-size: 2.5rem;
   font-weight: bolder;
@@ -287,7 +332,8 @@ body > header nav ul li.hireme a::after {
   background-color: #951a0c2a;
   border: 1px solid #95190c;
   padding: 10px 10px 10px 10px;
-  width: 250px;
+  width: fit-content;
+  max-width: 100%;
 }
 
 .webcloster{
@@ -296,6 +342,17 @@ body > header nav ul li.hireme a::after {
   color: #e8e8e8;
   font-weight: bold;
   
+}
+
+.link-webcloster {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-webcloster:hover {
+  color: #e3b505;
+  text-decoration: underline;
 }
 
 .stack-tecnologico{
@@ -653,5 +710,453 @@ body > header nav ul li.hireme a::after {
     .panel-lateral {
         width: 100%;
         max-width: 700px;
+    }
+}
+
+/* ---------- Contruyamos Juntos ---------- */
+
+.contruyamos {
+    max-width: 1400px;
+    margin: 60px auto 80px auto;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.contruyamos-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contruyamos-texto {
+    flex: 1 1 480px;
+    display: flex;
+    flex-direction: column;
+}
+
+.invitación {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #e8e8e8;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+    max-width: 460px;
+}
+
+.sobre-mi {
+    color: #8d8f9f;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    max-width: 460px;
+}
+
+.contruyamos-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contruyamos-contacto a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #c9cbd9;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contruyamos-contacto a:hover {
+    color: #e3b505;
+}
+
+.contruyamos-contacto img {
+    width: 1.3rem;
+    height: 1.3rem;
+    object-fit: contain;
+}
+
+.contruyamos-form {
+    flex: 1 1 480px;
+    background-color: #21263a;
+    border: 1px solid #2a3048;
+    border-top: 2px solid #00b4d8;
+    border-radius: 8px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-fila {
+    display: flex;
+    gap: 20px;
+}
+
+.campo-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-form label {
+    color: #5c6784;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+}
+
+.campo-form input,
+.campo-form textarea {
+    background-color: #1f2232;
+    border: 1px solid #3a4160;
+    border-radius: 4px;
+    padding: 12px 14px;
+    color: #e8e8e8;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.campo-form input::placeholder,
+.campo-form textarea::placeholder {
+    color: #5c6784;
+}
+
+.campo-form input:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-color: #00b4d8;
+}
+
+.campo-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.btn-enviar {
+    background-color: #1f2232;
+    border: 1px solid #00b4d8;
+    color: #e8e8e8;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    padding: 14px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #00b4d8;
+    color: #1f2232;
+}
+
+@media (max-width: 900px) {
+    .form-fila {
+        flex-direction: column;
+        gap: 22px;
+    }
+}
+
+/* ===================================================================
+   RESPONSIVE — Header / navegación (menú hamburguesa)
+   =================================================================== */
+
+@media (max-width: 760px) {
+    body > header {
+        height: auto;
+        padding: 16px 0;
+        margin-bottom: 30px;
+    }
+
+    body > header nav {
+        justify-content: flex-end;
+        padding: 0 20px;
+    }
+
+    .menu-toggle-btn {
+        display: flex;
+    }
+
+    body > header nav ul {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 20px;
+        left: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background-color: #21263a;
+        border: 1px solid #2a3048;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 15;
+    }
+
+    body > header nav ul li {
+        width: 100%;
+    }
+
+    body > header nav ul li a {
+        display: block;
+        padding: 12px 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    body > header nav ul li a::after {
+        display: none;
+    }
+
+    body > header nav ul li.hireme {
+        margin-top: 4px;
+    }
+
+    body > header nav ul li.hireme a {
+        text-align: center;
+        border-radius: 6px;
+    }
+
+    .menu-toggle-input:checked ~ ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .menu-toggle-input:checked ~ .menu-toggle-btn span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle-input:checked ~ .menu-toggle-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle-input:checked ~ .menu-toggle-btn span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/* ===================================================================
+   RESPONSIVE — Sección perfil (hero)
+   =================================================================== */
+
+@media (max-width: 1000px) {
+    #perfil {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .perfil-info {
+        align-items: center;
+    }
+
+    .universidad,
+    #nombre,
+    .descripcion,
+    .acciones,
+    .estadisticas {
+        max-width: 100%;
+    }
+
+    .disponibilidad {
+        justify-content: center;
+    }
+
+    .acciones {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .estadisticas {
+        justify-content: center;
+    }
+
+    .estadisticas table {
+        margin: 0 auto;
+    }
+
+    .perfil-imagen {
+        width: 280px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 480px) {
+    #nombre {
+        font-size: 1.9rem;
+    }
+
+    .universidad {
+        text-align: center;
+    }
+
+    .acciones {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .acciones a {
+        text-align: center;
+    }
+
+    .estadisticas {
+        gap: 10px;
+    }
+
+    .estadisticas th {
+        font-size: 1.15rem;
+    }
+
+    .estadisticas td {
+        font-size: 0.8rem;
+    }
+
+    .perfil-imagen {
+        width: 220px;
+        height: 280px;
+    }
+}
+
+/* ===================================================================
+   RESPONSIVE — Experiencia & proyectos
+   =================================================================== */
+
+@media (max-width: 900px) {
+    #experiencia-proyectos {
+        margin-top: 30px;
+    }
+
+    .experiencia {
+        font-size: 2rem;
+    }
+
+    .experiencia-webcloster {
+        flex-direction: column;
+        padding: 32px 24px 28px 24px;
+        gap: 28px;
+    }
+
+    .experiencia-imagen-contenedor {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .experiencia-imagen-contenedor img {
+        margin-bottom: 0;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoria {
+        font-size: 1rem;
+    }
+
+    .webcloster,
+    .link-webcloster {
+        font-size: 1.25rem;
+    }
+
+    .herramientas-tecnologias {
+        font-size: 0.9rem;
+    }
+
+    .lista-tecnologias {
+        gap: 16px;
+    }
+}
+
+/* ===================================================================
+   RESPONSIVE — Stack técnico
+   =================================================================== */
+
+@media (max-width: 900px) {
+    .stack-tecnico-seccion {
+        margin: 40px auto 60px auto;
+    }
+
+    .stack-tecnico {
+        font-size: 2rem;
+    }
+
+    #stack-network {
+        height: 440px;
+    }
+}
+
+@media (max-width: 480px) {
+    #stack-network {
+        height: 360px;
+    }
+
+    .zoom-controls {
+        bottom: 12px;
+        right: 12px;
+    }
+
+    .zoom-controls button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .panel-lateral > div {
+        padding: 18px;
+    }
+}
+
+/* ===================================================================
+   RESPONSIVE — Contruyamos juntos / formulario de contacto
+   =================================================================== */
+
+@media (max-width: 760px) {
+    .contruyamos {
+        margin: 40px auto 60px auto;
+    }
+
+    .invitación,
+    .sobre-mi {
+        max-width: 100%;
+    }
+
+    .contruyamos-form {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .invitación {
+        font-size: 1.1rem;
+    }
+
+    .contruyamos-contacto a {
+        font-size: 0.85rem;
+    }
+
+    .contruyamos-form {
+        padding: 18px;
+    }
+
+    .btn-enviar {
+        font-size: 0.8rem;
+        padding: 12px 16px;
     }
 }

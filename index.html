@@ -11,11 +11,17 @@
 <body>
     <header>
         <nav>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+            <label for="menu-toggle" class="menu-toggle-btn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <ul>
-                <li><a href="index.html">Work</a></li>
-                <li><a href="about.html">Stack</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="hireme"><a href="hireme.html">Hire Me</a></li>
+                <li><a href="#experiencia-proyectos">Work</a></li>
+                <li><a href="#stack-tecnico">Stack</a></li>
+                <li><a href="#contruyamos">Contact</a></li>
+                <li class="hireme"><a href="#contruyamos">Hire Me</a></li>
             </ul>
         </nav>
     </header>
@@ -37,8 +43,8 @@
                 </p>
 
                 <div class="acciones">
-                    <a href="#proyectos" class="btn-proyectos">Ver Proyectos</a>
-                    <a href="#contacto" class="btn-contacto">Contactar</a>
+                    <a href="#experiencia-proyectos" class="btn-proyectos">Ver Proyectos</a>
+                    <a href="#contruyamos" class="btn-contacto">Contactar</a>
                 </div>
 
                 <div class="estadisticas">
@@ -62,12 +68,12 @@
             </picture>
         </section>
         <section id="experiencia-proyectos">
-            <p id="experiencia">Experiencia & proyectos</p>
+            <p class="experiencia">Experiencia & proyectos</p>
 
             <div class="experiencia-webcloster">
                 <div class="experiencia-detalles">
                     <p class="categoria">Experiencia Comercial</p>
-                    <p class="webcloster">Invessoft - Plataforma de Eventos</p>
+                    <p class="webcloster"><a href="https://invessoft.app/landing" target="_blank" rel="noopener noreferrer" class="link-webcloster">Invessoft - Plataforma de Eventos</a></p>
                     <p class="stack-tecnologico">Full stack · NestJS · Angular · PostgreSQL</p>
                     <p class="descripcion-proyecto">
                         Desarrollé módulos de georeferenciación, acortador de URLs y generación de códigos QR para
@@ -106,7 +112,7 @@
                 </div>
             </div>
         </section>
-        <section class="stack-tecnico-seccion">
+        <section class="stack-tecnico-seccion" id="stack-tecnico">
             <p class="stack-tecnico">Stack tecnico</p>
             <div class="grafo-container">
                 <div class="grafo-columna">
@@ -158,8 +164,30 @@
                     </div>
                 </aside>
             </div>
-            <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-            <script src="marast.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js" defer></script>
+            <script src="marast.js" defer></script>
+        </section>
+        <section class="contruyamos" id="contruyamos">
+            <p class="experiencia">Contruyamos Juntos</p>
+            <div class="contruyamos-container">
+                <div class="contruyamos-texto">
+                    <p class="invitación">"Abierto a prácticas, roles junior y proyectos freelance interesantes."</p>
+                    <p class="sobre-mi">Soy estudiante de 10° semestre de Ingeniería de Sistemas en la Universidad del Valle, con más de 12 meses de experiencia en backends NestJS de producción, e-commerce, infraestructura contenerizada en Azure y SPAs con Angular. Busco oportunidades donde pueda aportar y seguir creciendo.</p>
+                    <div class="contruyamos-contacto">
+                        <a href="mailto:marlonastudillo1@gmail.com"><img src="svg/mail.svg" alt="Correo">marlonastudillo1@gmail.com</a>
+                        <a href="https://github.com/MARAST01" target="_blank" rel="noopener noreferrer"><img src="svg/github.svg" alt="GitHub">github.com/MARAST01</a>
+                        <a href="https://www.linkedin.com/in/marlonastudillo" target="_blank" rel="noopener noreferrer"><img src="svg/linkedin.svg" alt="LinkedIn">linkedin.com/in/marlonastudillo</a>
+                    </div>
+                </div>
+
+                <form class="contruyamos-form" id="form-contacto">
+                    <div class="campo-form">
+                        <label for="message">MESSAGE</label>
+                        <textarea id="message" name="message" placeholder="Cuéntame sobre el rol o proyecto..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-enviar">ENVIAR MENSAJE &rarr;</button>
+                </form>
+            </div>
         </section>
     </main>
 

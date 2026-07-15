@@ -269,3 +269,24 @@ red.on('click', function (params) {
 
 // Estado inicial
 resetVista();
+
+// ===================================================================
+// 7. Formulario de contacto: abre el cliente de correo del visitante
+// (mailto:) con el mensaje pre-rellenado, ya que GitHub Pages no
+// permite tener un backend que envíe el correo directamente.
+// ===================================================================
+const CORREO_RECEPTOR = 'marlonastudillo1@gmail.com';
+const formContacto = document.getElementById('form-contacto');
+
+if (formContacto) {
+    formContacto.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const mensaje = document.getElementById('message').value.trim();
+
+        const asunto = 'Contacto desde el portafolio de Marlon Astudillo';
+        const enlaceMailto = `mailto:${CORREO_RECEPTOR}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(mensaje)}`;
+
+        window.location.href = enlaceMailto;
+    });
+}
